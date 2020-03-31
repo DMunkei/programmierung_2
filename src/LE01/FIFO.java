@@ -2,7 +2,7 @@ package LE01;
 
 import java.util.Random;
 
-public class FIFO
+public class FIFO implements IntegerBuffer
 {
     /***
      * Attributes
