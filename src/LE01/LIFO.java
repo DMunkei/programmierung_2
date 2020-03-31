@@ -1,13 +1,13 @@
 package LE01;
-
+/***
+ * Author Dominique Köstler
+ */
 import java.util.Random;
-public class LIFO implements IntegerBuffer
+public class LIFO extends AbstractIntegerBuffer
 {
     /***
      * Attributes
      */
-    private Integer array[];
-    private int size;
     private int lastUsedIndex = 0;
 
     /***
@@ -28,23 +28,13 @@ public class LIFO implements IntegerBuffer
         Random randomSize = new Random();
         do
         {
-            this.size = randomSize.nextInt(100);
+            this.size = randomSize.nextInt(101);
         } while (this.size<=3);
         this.array = new Integer[this.size];
     }
 
-    public void push(Integer i)
-    {
-        try
-        {
-            this.array[lastUsedIndex] = i;
-            this.lastUsedIndex++;
-        } catch (IndexOutOfBoundsException e)
-        {
-            System.out.println(e.getMessage());
-        }
-    }
 
+    @Override
     public Integer pop()
     {
         if(lastUsedIndex == 0) return null;
@@ -53,6 +43,7 @@ public class LIFO implements IntegerBuffer
         {
             this.lastUsedIndex--;
             number = this.array[lastUsedIndex];
+            this.array[lastUsedIndex] = null;
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -61,23 +52,7 @@ public class LIFO implements IntegerBuffer
         return number;
     }
 
-    /***
-     * Returns how many indices have been used.
-     * @return
-     */
-    public int size()
-    {
-        return this.lastUsedIndex;
-    }
 
-    /***
-     * The maximum size of the stack
-     * @return integer
-     */
-    public int capacity()
-    {
-        return this.size;
-    }
     @Override
     public String toString()
     {

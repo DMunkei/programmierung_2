@@ -1,14 +1,15 @@
 package LE01;
+/***
+ * Author Dominique Köstler
+ */
 
 import java.util.Random;
 
-public class FIFO implements IntegerBuffer
+public class FIFO extends AbstractIntegerBuffer
 {
     /***
      * Attributes
      */
-    private Integer array[];
-    private int size;
     private int lastIndexUsed=0;
 
     /***
@@ -29,23 +30,10 @@ public class FIFO implements IntegerBuffer
         Random randomSize = new Random();
         do
         {
-            this.size = randomSize.nextInt(100);
+            this.size = randomSize.nextInt(101);
         } while (this.size<=3);
         this.array = new Integer[this.size];
     }
-
-    public void push(Integer i)
-    {
-        try
-        {
-            this.array[lastIndexUsed] = i;
-            this.lastIndexUsed++;
-        } catch (IndexOutOfBoundsException e)
-        {
-            System.out.println(e.getMessage());
-        }
-    }
-
     public Integer pop()
     {
         if(lastIndexUsed == 0) return null;
@@ -61,13 +49,6 @@ public class FIFO implements IntegerBuffer
         this.array = newArray;
         return  output;
     }
-    public int size(){return lastIndexUsed;}
-
-    public int capacity()
-    {
-        return this.size;
-    }
-
 
     public static void main(String[] args)
     {
