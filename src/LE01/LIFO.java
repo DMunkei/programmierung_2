@@ -43,17 +43,12 @@ public class LIFO
         {
             System.out.println(e.getMessage());
         }
-
-   /*     if(lastUsedIndex < this.size && lastUsedIndex >0){
-            this.array[lastUsedIndex] = i;
-            this.lastUsedIndex++;
-        }*/
     }
 
     public Integer pop()
     {
-        Integer number = -1;
         if(lastUsedIndex == 0) return null;
+        Integer number = -1;
         try
         {
             this.lastUsedIndex--;
