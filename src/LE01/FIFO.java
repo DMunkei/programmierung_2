@@ -8,17 +8,11 @@ import java.util.Random;
 public class FIFO extends AbstractIntegerBuffer
 {
     /***
-     * Attributes
-     */
-    private int lastIndexUsed=0;
-
-    /***
      * LIFO Constructor that takes a size to decide how big the Stack will be
      * @param size
      */
     public FIFO(int size)
     {
-        this.size = size;
         this.array = new Integer[size];
     }
 
@@ -28,15 +22,16 @@ public class FIFO extends AbstractIntegerBuffer
     public FIFO()
     {
         Random randomSize = new Random();
+        int size = 0;
         do
         {
-            this.size = randomSize.nextInt(101);
-        } while (this.size<=3);
-        this.array = new Integer[this.size];
+            size = randomSize.nextInt(101);
+        } while (size<=3);
+        this.array = new Integer[size];
     }
     public Integer pop()
     {
-        if(lastIndexUsed == 0) return null;
+        if(this.size == 0) return null;
         Integer output = this.array[0];
         Integer arrayLength = this.array.length;
         Integer newArray[] = new Integer[arrayLength];
@@ -45,7 +40,7 @@ public class FIFO extends AbstractIntegerBuffer
             if(this.array[i] == null) break;
            newArray[i-1] = this.array[i];
         }
-        this.lastIndexUsed--;
+        this.size--;
         this.array = newArray;
         return  output;
     }

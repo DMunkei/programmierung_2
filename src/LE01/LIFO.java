@@ -5,10 +5,6 @@ package LE01;
 import java.util.Random;
 public class LIFO extends AbstractIntegerBuffer
 {
-    /***
-     * Attributes
-     */
-    private int lastUsedIndex = 0;
 
     /***
      * LIFO Constructor that takes a size to decide how big the Stack will be
@@ -16,7 +12,6 @@ public class LIFO extends AbstractIntegerBuffer
      */
     public LIFO(int size)
     {
-        this.size = size;
         this.array = new Integer[size];
     }
 
@@ -26,24 +21,25 @@ public class LIFO extends AbstractIntegerBuffer
     public LIFO()
     {
         Random randomSize = new Random();
+        int size = 0;
         do
         {
-            this.size = randomSize.nextInt(101);
-        } while (this.size<=3);
-        this.array = new Integer[this.size];
+            size = randomSize.nextInt(101);
+        } while (size<=3);
+        this.array = new Integer[size];
     }
 
 
     @Override
     public Integer pop()
     {
-        if(lastUsedIndex == 0) return null;
+        if(size == 0) return null;
         Integer number = -1;
         try
         {
-            this.lastUsedIndex--;
-            number = this.array[lastUsedIndex];
-            this.array[lastUsedIndex] = null;
+            this.size--;
+            number = this.array[size];
+            this.array[size] = null;
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -62,16 +58,6 @@ public class LIFO extends AbstractIntegerBuffer
     public static void main(String[] args)
     {
         LIFO l = new LIFO(5);
-/*        System.out.println("The size before adding: " +l.size());
-        for (int i = 0; i < l.capacity(); i++)
-        {
-            l.push(i);
-        }
-        System.out.println("The size after adding: " +l.size());
-        for (int i = 0; i < l.capacity(); i++)
-        {
-            System.out.println(l.pop());
-        }*/
         System.out.println(l.size());
         l.push(1);
         l.push(1);
