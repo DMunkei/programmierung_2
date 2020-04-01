@@ -6,15 +6,13 @@ public abstract class AbstractIntegerBuffer implements IntegerBuffer
 {
     protected int size = 0;
     protected Integer[] array;
-    protected int lastUsedIndex = 0;
-
     @Override
     public void push(Integer i)
     {
         try
         {
-            this.array[lastUsedIndex] = i;
-            this.lastUsedIndex++;
+            this.array[size] = i;
+            this.size++;
         } catch (IndexOutOfBoundsException e)
         {
             System.out.println(e.getMessage());
@@ -27,7 +25,7 @@ public abstract class AbstractIntegerBuffer implements IntegerBuffer
     @Override
     public int capacity()
     {
-        return this.size;
+        return this.array.length;
     }
 
     /***
@@ -37,6 +35,6 @@ public abstract class AbstractIntegerBuffer implements IntegerBuffer
     @Override
     public int size()
     {
-        return this.lastUsedIndex;
+        return this.size;
     }
 }
