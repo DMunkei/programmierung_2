@@ -1,16 +1,16 @@
 package LE02;
 
-public interface GroupIF
+public interface GroupIF<T>
 {
     int size();
 
     boolean isEmpty();
 
-    void appendLast(Gericht g) throws TableSpaceOutOfBoundsException;
+    void appendLast(T g) throws TableSpaceOutOfBoundsException;
 
-    Gericht removeLast() throws TableSpaceOutOfBoundsException;
+    T removeLast() throws TableSpaceOutOfBoundsException;
 
-    Gericht get(int p);
+    T get(int p);
 
     void swap(int p1, int p2);
 }

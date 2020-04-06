@@ -6,7 +6,7 @@ public class Pizza extends Gericht
 
     public Pizza()
     {
-        ;
+        super("Pizza",10);
     }
 
     public Pizza(int p, int d)

@@ -1,7 +1,5 @@
 package LE01;
-/***
- * Author Dominique Köstler
- */
+
 public class main
 {
 

@@ -1,14 +1,12 @@
 package LE02;
 
-public class GroupOfFour implements GroupIF
+public class GroupOfFour<T> implements GroupIF<T>
 {
     private int size = 0;
-    protected Gericht ersterPlatz;
-    protected Gericht zweiterPlatz;
-    private Gericht dritterPlatz;
-    private Gericht vierterPlatz;
-
-
+    protected T ersterPlatz;
+    protected T zweiterPlatz;
+    private T dritterPlatz;
+    private T vierterPlatz;
 
     public GroupOfFour()
     {
@@ -34,11 +32,12 @@ public class GroupOfFour implements GroupIF
         return size > 0;
     }
 
+
     /***
      * Appends a meal to next available empty place
      */
     @Override
-    public void appendLast(Gericht g) throws TableSpaceOutOfBoundsException
+    public void appendLast(T g) throws TableSpaceOutOfBoundsException
     {
         //Directly breaks out of the function since the last place isn't empty
         if(size > 3 ) throw new TableSpaceOutOfBoundsException();
@@ -66,10 +65,10 @@ public class GroupOfFour implements GroupIF
      * Removes the first non null meal look from 4 to 1
      */
     @Override
-    public Gericht removeLast()throws TableSpaceOutOfBoundsException
+    public T removeLast()throws TableSpaceOutOfBoundsException
     {
         if (size<0) throw new TableSpaceOutOfBoundsException(); //Directly breaks out of the function since the last place isn't empty
-        Gericht gericht = null;
+        T gericht = null;
         if (vierterPlatz != null)
         {
             gericht = vierterPlatz;
@@ -99,9 +98,9 @@ public class GroupOfFour implements GroupIF
     }
 
     @Override
-    public Gericht get(int p)
+    public T get(int p)
     {
-        Gericht g = null;
+        T g = null;
         switch (p)
         {
             case 1:
@@ -126,8 +125,8 @@ public class GroupOfFour implements GroupIF
     @Override
     public void swap(int i1, int i2)
     {
-        Gericht one = get(i1);
-        Gericht two = get(i2);
+        T one = get(i1);
+        T two = get(i2);
         switch (i1)
         {
             case 1:
