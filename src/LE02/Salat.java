@@ -30,8 +30,6 @@ public class Salat extends Gericht
     @Override
     public String toString()
     {
-        return "Salat{" +
-                "weight=" + weight +
-                '}';
+        return "Salat{weight=" + weight +'}';
     }
 }

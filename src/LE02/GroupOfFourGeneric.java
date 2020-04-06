@@ -1,7 +1,6 @@
-/*
 package LE02;
 
-public class GroupOfFour<T> implements GroupIF<T>
+public class GroupOfFourGeneric<T> implements GroupIF<T>
 {
     private int size = 0;
     protected T ersterPlatz;
@@ -9,7 +8,7 @@ public class GroupOfFour<T> implements GroupIF<T>
     private T dritterPlatz;
     private T vierterPlatz;
 
-    public GroupOfFour()
+    public GroupOfFourGeneric()
     {
         ersterPlatz = null;
         zweiterPlatz = null;
@@ -23,24 +22,19 @@ public class GroupOfFour<T> implements GroupIF<T>
         return this.size;
     }
 
-    */
-/***
+    /***
      * True when size > 0
      * @return True
-     *//*
-
+     */
     @Override
     public boolean isEmpty()
     {
         return size > 0;
     }
 
-
-    */
-/***
+    /***
      * Appends a meal to next available empty place
-     *//*
-
+     */
     @Override
     public void appendLast(T g) throws TableSpaceOutOfBoundsException
     {
@@ -66,11 +60,9 @@ public class GroupOfFour<T> implements GroupIF<T>
         }
     }
 
-    */
-/***
+    /***
      * Removes the first non null meal look from 4 to 1
-     *//*
-
+     */
     @Override
     public T removeLast()throws TableSpaceOutOfBoundsException
     {
@@ -166,7 +158,6 @@ public class GroupOfFour<T> implements GroupIF<T>
         }
     }
 
-
     public void clear()
     {
         ersterPlatz = null;
@@ -177,4 +168,3 @@ public class GroupOfFour<T> implements GroupIF<T>
     }
 
 }
-*/
