@@ -8,12 +8,32 @@ public class GroupOfFourGeneric<T> implements GroupIF<T>
     private T dritterPlatz;
     private T vierterPlatz;
 
+
     public GroupOfFourGeneric()
     {
         ersterPlatz = null;
         zweiterPlatz = null;
         dritterPlatz = null;
         vierterPlatz = null;
+    }
+
+    /***
+     * Takes the first 4 meals and saves them into the class
+     * @param meals
+     */
+    public GroupOfFourGeneric(T[] meals)
+    {
+        try
+        {
+            ersterPlatz = meals[0];
+            zweiterPlatz= meals[1];
+            dritterPlatz= meals[2];
+            vierterPlatz= meals[3];
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

@@ -1,21 +1,22 @@
-/*package LE02;
+package LE02;
 
+import LE02.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GroupOfFourTest
+class GroupOfFourGenericTest
 {
-    GroupOfFour GOF = null;
+    GroupOfFourGeneric GOF = null;
     Gericht[] gerichts = new Gericht[4];
     Pizza p = new Pizza(10,10);
     Pizza p2 = new Pizza(20,20);
     @BeforeEach
     void setUp() throws TableSpaceOutOfBoundsException
     {
-        GOF = new GroupOfFour();
+       GOF = new GroupOfFourGeneric();
     }
     @AfterEach
     void tearDown()
@@ -42,6 +43,24 @@ class GroupOfFourTest
         GOF.swap(1,2);
         assertEquals(p2,GOF.ersterPlatz,"Swapped something wrong woops!");
 
+    }
+
+    @Test
+    void testMealMixing() throws TableSpaceOutOfBoundsException
+    {
+        Salat[] salads = {new Salat(10,10)};
+        GroupOfFourGeneric<Salat> saladMeals  = new GroupOfFourGeneric<>(salads);
+        saladMeals.appendLast(salads[0]);
+        assertEquals(saladMeals.get(2),salads[0],"This isn't a salad!");
+    }
+
+    @Test
+    void testMeals() throws TableSpaceOutOfBoundsException
+    {
+        GroupOfFourGeneric<Gericht> meals = new GroupOfFourGeneric<>();
+        meals.appendLast(new Pizza(10, 10));
+        meals.appendLast(new Salat(10, 10));
+        assertNotEquals(meals.get(1), meals.get(2), "These two are the same!");
     }
 
     @Test
@@ -95,4 +114,3 @@ class GroupOfFourTest
     }
 
 }
-*/

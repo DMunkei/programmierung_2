@@ -30,8 +30,6 @@ public class Pizza extends Gericht
     @Override
     public String toString()
     {
-        return "Pizza{" +
-                "diameter=" + diameter +
-                '}';
+        return "Pizza{diameter=" + diameter +" price: " + getPrice()+"}";
     }
 }
