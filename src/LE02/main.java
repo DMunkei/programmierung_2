@@ -20,7 +20,7 @@ public class main
         Gerichte.appendLast(new Salat(10,10));
         System.out.println(Gerichte.get(4));*/
 
-        ComparatorPizzaDiameter pcp = new ComparatorPizzaDiameter(new Pizza(10,10), new Pizza(20,20));
+       /* ComparatorPizzaDiameter pcp = new ComparatorPizzaDiameter(new Pizza(10,10), new Pizza(20,20));
         ComparatorGerichtPrice gcp = new ComparatorGerichtPrice(new Salat(23,30),new Pizza(20,20));
         ComparatorSalatWeight scp = new ComparatorSalatWeight(new Salat(10,40), new Salat(20,40));
 
@@ -47,8 +47,14 @@ public class main
                 new Pizza(00,200),
         };
         ComparatorGerichtPrice g = new ComparatorGerichtPrice();
-        System.out.println(MyUtil.max(meals,g));
+        System.out.println(MyUtil.max(meals,g));*/
 
+       String[] a ={"a","b","c","d"};
+       Iterator1dArray<String> iterator = new Iterator1dArray<>(a);
+        while (iterator.hasNext())
+        {
+            System.out.println(iterator.next());
+        }
 
 
     }
