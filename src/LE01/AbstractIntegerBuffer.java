@@ -1,7 +1,5 @@
 package LE01;
-/***
- * Author Dominique Köstler
- */
+
 public abstract class AbstractIntegerBuffer implements IntegerBuffer
 {
     protected int size = 0;
