@@ -3,6 +3,7 @@ package LE02;
 import LE03.*;
 
 import java.awt.*;
+import java.util.Iterator;
 
 public class main
 {
@@ -48,14 +49,43 @@ public class main
         };
         ComparatorGerichtPrice g = new ComparatorGerichtPrice();
         System.out.println(MyUtil.max(meals,g));*/
-
+/*
        String[] a ={"a","b","c","d"};
        Iterator1dArray<String> iterator = new Iterator1dArray<>(a);
         while (iterator.hasNext())
         {
             System.out.println(iterator.next());
-        }
+        }*/
 
+        Pizza[] pizzas = {
+                new Pizza(1,1),
+                new Pizza(2,2),
+                new Pizza(3,3),
+                new Pizza(4,4)};
+
+        Salat[] salads = {
+                new Salat(1, 1),
+                new Salat(2, 2),
+        };
+
+
+
+        GroupOfFourGeneric<Gericht> g = new GroupOfFourGeneric<>(pizzas);
+
+        IteratorGroupOfFour<GroupOfFourGeneric> mealerator = new IteratorGroupOfFour<>(g);
+        IteratorGericht<Gericht> meals = new IteratorGericht<>(pizzas);
+        IteratorGericht<Gericht> meals2 = new IteratorGericht<>(salads);
+
+
+/*        while (mealerator.hasNext())
+        {
+            System.out.println(mealerator.next());
+        }*/
+
+
+        MyUtil util = new MyUtil();
+        //util.printAll(meals);
+        util.printAll(meals,meals2);
 
     }
 }

@@ -75,5 +75,21 @@ public class MyUtil
         return new Pizza(10,10);
     }
 
+    public void printAll(IteratorGericht<Gericht> meals)
+    {
+        while (meals.hasNext())
+        {
+            System.out.println(meals.next());
+        }
+    }
+
+    public void printAll(IteratorGericht<Gericht> meals1, IteratorGericht<Gericht> meals2)
+    {
+        while (meals1.hasNext() && meals2.hasNext())
+        {
+
+            System.out.println("1: " + meals1.next() + " 2: " + meals2.next() + "\n");
+        }
+    }
 
 }

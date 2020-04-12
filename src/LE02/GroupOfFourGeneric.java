@@ -29,6 +29,7 @@ public class GroupOfFourGeneric<T> implements GroupIF<T>
             zweiterPlatz= meals[1];
             dritterPlatz= meals[2];
             vierterPlatz= meals[3];
+            this.size = meals.length;
         }
         catch (IndexOutOfBoundsException e)
         {
