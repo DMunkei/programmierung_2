@@ -9,7 +9,7 @@ import java.util.Comparator;
 public class MyUtil
 {
 
-/***
+    /***
      * Compares all of the words in an array by length and returns the longest word.
      * @param words
      * @param x
@@ -75,6 +75,5 @@ public class MyUtil
             System.out.println("1: " + meals1.next() + " 2: " + meals2.next() + "\n");
         }
     }
-
 
 }

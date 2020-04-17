@@ -12,4 +12,8 @@ public class Helper
     {
         return dataType;
     }
+    public static <T> T printType(T dataType)
+    {
+        return (T) ("This is a " + dataType);
+    }
 }
