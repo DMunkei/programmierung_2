@@ -10,6 +10,21 @@ public abstract class Gericht
         ;
     }
 
+
+    /***
+     * Generic method that takes two meals and returns the first meal regardless which one is more expensive
+     * @param meal1
+     * @param meal2
+     * @param <T>
+     * @return first argument
+     */
+
+    public static <T> T getMoreExpensive(T meal1, T meal2)
+    {
+        return meal1;
+    }
+
+
     public Gericht(String s, int i)
     {
         this.course = s;
