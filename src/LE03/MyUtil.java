@@ -9,22 +9,6 @@ import java.util.Comparator;
 public class MyUtil
 {
 
-/*
-
-    public static void main(String[] args)
-    {
-        */
-/*String[] words = {"Hello","rld", "a","longerword","", "bcd","evenlongerword"};
-        ComparatorStringLength s = new ComparatorStringLength();
-        System.out.println(max(words, s));*//*
-
-
-        //TODO Figure out how if its possible to do it with a lambda function instead of a Comparatorclass
-        //System.out.println(max(words, (x) -> ()));
-    }
-*/
-
-
     /***
      * Compares all of the words in an array by length and returns the longest word.
      * @param words
@@ -91,5 +75,6 @@ public class MyUtil
             System.out.println("1: " + meals1.next() + " 2: " + meals2.next() + "\n");
         }
     }
+
 
 }
