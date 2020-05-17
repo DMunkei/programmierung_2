@@ -1,6 +1,6 @@
-package LE03;
+package LE02;
 
-import LE02.Pizza;
+import LE01.Pizza;
 
 import java.util.Comparator;
 

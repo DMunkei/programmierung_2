@@ -1,4 +1,4 @@
-package LE01;
+package LE00;
 
 public interface IntegerBuffer
 {

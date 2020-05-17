@@ -1,10 +1,9 @@
-package LE04;
+package LE03;
 
-import LE02.Pizza;
-import LE02.Salat;
-import org.junit.jupiter.api.BeforeEach;
+import LE01.Pizza;
+import LE01.Salat;
 import org.junit.jupiter.api.Test;
-import LE02.Gericht;
+import LE01.Gericht;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GerichtTest

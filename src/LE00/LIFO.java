@@ -1,4 +1,4 @@
-package LE01;
+package LE00;
 
 import java.util.Random;
 public class LIFO extends AbstractIntegerBuffer
