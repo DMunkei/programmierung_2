@@ -2,31 +2,22 @@ package LE01;
 
 public class main
 {
-
-    public static void main(String[] args)
+    public static void main(String[] args) throws TableSpaceOutOfBoundsException
     {
-        String s = "hi";
-        LIFO L = new LIFO();
-        FIFO F = new FIFO();
-        int i = 0;
-        while (i<6)
-        {
-            L.push(i);
-            i++;
-        }
 
-        Helper.move(L,F);
+        Pizza p1 = new Pizza(10,10);
+        Pizza p2 = new Pizza(10,10);
+        Salat s1 = new Salat(30,10);
 
-        FIFO F2 = new FIFO();
+        Object o1 = Gericht.getMoreExpensive(p1, p2);
+        Object o2 = Gericht.getMoreExpensive(p1, s1);
+        Object o3 = Gericht.getMoreExpensive("Test", 5);
 
-        LIFO L2 = new LIFO();
-        i = 0;
-        while (i<6)
-        {
-            F2.push(i);
-            i++;
-        }
-        Helper.move(F2,L2);
-        System.out.println("TEST");
+        Object[] objects = new Object[]{o1,o2,o3};
+
+
+
+        System.out.println("halt");
+
     }
 }

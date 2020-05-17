@@ -1,6 +1,6 @@
-package LE03;
+package LE02;
 
-import LE02.Gericht;
+import LE01.Gericht;
 
 import java.util.Comparator;
 

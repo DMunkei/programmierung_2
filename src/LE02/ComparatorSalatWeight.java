@@ -1,6 +1,6 @@
-package LE03;
+package LE02;
 
-import LE02.Salat;
+import LE01.Salat;
 
 import java.util.Comparator;
 

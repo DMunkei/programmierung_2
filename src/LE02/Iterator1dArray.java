@@ -1,4 +1,4 @@
-package LE03;
+package LE02;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

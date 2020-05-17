@@ -1,4 +1,4 @@
-package LE02;
+package LE01;
 
 public class TableSpaceOutOfBoundsException extends Throwable
 {

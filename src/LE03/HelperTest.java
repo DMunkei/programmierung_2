@@ -1,8 +1,8 @@
-package LE04;
+package LE03;
 import static org.junit.jupiter.api.Assertions.*;
 
-import LE02.Pizza;
-import LE02.Salat;
+import LE01.Pizza;
+import LE01.Salat;
 import org.junit.jupiter.api.Test;
 
 class HelperTest {

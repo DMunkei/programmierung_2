@@ -1,6 +1,6 @@
-package LE03;
+package LE02;
 
-import LE02.GroupOfFourGeneric;
+import LE01.GroupOfFourGeneric;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
