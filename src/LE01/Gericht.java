@@ -19,9 +19,9 @@ public abstract class Gericht
      * @return first argument
      */
 
-    public static <T> T getMoreExpensive(T meal1, T meal2)
+    public static <T extends Gericht> T getMoreExpensive(T meal1, T meal2)
     {
-        return meal1;
+        return meal1.getPrice() > meal2.getPrice() ? meal1 : meal2;
     }
 
 

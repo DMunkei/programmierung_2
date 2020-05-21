@@ -11,9 +11,9 @@ public class main
 
         Object o1 = Gericht.getMoreExpensive(p1, p2);
         Object o2 = Gericht.getMoreExpensive(p1, s1);
-        Object o3 = Gericht.getMoreExpensive("Test", 5);
+        //Object o3 = Gericht.getMoreExpensive("Test", 5);
 
-        Object[] objects = new Object[]{o1,o2,o3};
+        Object[] objects = new Object[]{o1,o2};
 
 
 

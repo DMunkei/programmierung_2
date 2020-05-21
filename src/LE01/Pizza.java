@@ -1,17 +1,17 @@
 package LE01;
 
-public class Pizza extends Gericht
+public class Pizza extends Gericht implements Comparable<Gericht>
 {
     private int diameter = 0;
 
     public Pizza()
     {
-        super("Pizza",10);
+        super("2 - Hauptspeise",10);
     }
 
     public Pizza(int p, int d)
     {
-        super("pizza",p);
+        super("2 - Hauptspeise",p);
         this.diameter = d;
     }
 
@@ -31,5 +31,12 @@ public class Pizza extends Gericht
     public String toString()
     {
         return "Pizza{diameter=" + diameter +" price: " + getPrice()+"}";
+    }
+
+    @Override
+    public int compareTo(Gericht o)
+    {
+        int nameComparison = this.getCourse().compareTo(o.getCourse());
+        return (nameComparison != 0) ? nameComparison : this.getPrice() - o.getPrice();
     }
 }
